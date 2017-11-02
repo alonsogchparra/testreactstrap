@@ -1,0 +1,71 @@
+/* BACKGROUND */
+
+html {
+    background-image: url("../images/aracar-bg.jpg");
+}
+
+body {
+    background-color: rgba(112, 120, 128, 0);
+}
+
+
+/* CONTAINER */
+
+.mt-5 {
+    margin-top: 7rem !important;
+}
+
+
+/* LEFT COLUMN */
+
+.left-column {
+    background: rgba(112, 129, 146, 0.8);
+}
+
+.left-title, .left-subtitle {
+    color: #FFFFFF;
+}
+
+
+/* RIGHT COLUMN */
+
+.right-column {
+    background-color: #fefefe;
+    -webkit-box-shadow: 9px 7px 36px 1px rgba(0,0,0,0.22);
+    -moz-box-shadow: 9px 7px 36px 1px rgba(0,0,0,0.22);
+    box-shadow: 9px 7px 36px 1px rgba(0,0,0,0.22);
+}
+
+img.rounded.mx-auto.d-block {
+    max-width: 150px;
+}
+
+.form-control {
+    border-radius: 0px;
+    line-height: 2;
+    border-color: #c4cfd4;
+}
+
+
+
+button.btn-select.dropdown-toggle.btn.btn-secondary {
+    line-height: 2;
+    border-radius: 0px;
+    background: #ffffff;
+    color: #959195;
+    border-color: #c4cfd4;
+}
+
+/* PLAN AREA */
+
+button.btn.btn-primary {
+    padding: 2% 14%;
+    border-radius: 0px;
+    background: #2e444f;
+    border-color: #2e444f;
+}
+
+.border {
+    border: 1px solid #2a2eef !important;
+}
+
