@@ -47,25 +47,22 @@ html {
 }
 
 body {
-    background-color: rgba(112, 120, 128, 0);
+    background-color: rgba(112, 120, 128, 0) !important;
 }
 
 
 /* CONTAINER */
 
-.mt-5 {
-    margin-top: 7rem !important;
-}
 
 
 /* LEFT COLUMN */
 
-.left-column {
+.left-column, .col-6.left-column {
     background: rgba(112, 129, 146, 0.8);
 }
 
 h1.left-subtitle {
-    font-family: 'ZillaSlabMedium';
+    font-family: 'ZillaSlab';
 }
 
 h2.left-title {
@@ -140,7 +137,7 @@ p.plan-subtitle {
     font-family: 'WorkSans';
 }
 
-.list-group-item-action:hover p {
+.list-group-item-action:hover p, .list-group-item-action:focus p {
     font-size: 10px;
     color: #ffffff;
 }
@@ -155,7 +152,7 @@ hr.hr-plan {
 
 
 button.btn.btn-primary {
-    padding: 2% 14%;
+    padding: 3% 19%;
     border-radius: 0px;
     background: #2e444f;
     border-color: #2e444f;
@@ -168,5 +165,17 @@ button.btn.btn-primary:hover {
 
 .border {
     border: 1px solid #9fabb5 !important;
+}
+
+/* Information Sent */
+
+h2.right-title-thank-you {
+    font-family: 'ZillaSlabLight';
+    color: #798796;
+}
+
+h6.will-contact {
+    font-family: 'WorkSans';
+    color: #3c505a;
 }
 
