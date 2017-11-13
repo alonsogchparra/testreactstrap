@@ -87,7 +87,7 @@ class RegistrationPhaseOne extends Component {
                                         <Input
                                             type="text"
                                             className="form-control"
-                                            id="inputName4"
+                                            id="firstName"
                                             placeholder="Individual Borrower Name"
                                             onChange={this.onChange.bind(this, 'name')} />
                                     </div>
@@ -95,7 +95,7 @@ class RegistrationPhaseOne extends Component {
                                         <Input
                                             type="text"
                                             className="form-control"
-                                            id="inputLastName4"
+                                            id="lastName"
                                             placeholder="Individual Borrower Last Name"
                                             onChange={this.onChange.bind(this, 'lastName')} />
                                     </div>
@@ -105,7 +105,7 @@ class RegistrationPhaseOne extends Component {
                                         <Input
                                             type="text"
                                             className="form-control"
-                                            id="inputCuit4"
+                                            id="cuit"
                                             placeholder="CUIT"
                                             onChange={this.onChange.bind(this, 'cuit')} />
                                         <div className="overlay">
@@ -116,7 +116,7 @@ class RegistrationPhaseOne extends Component {
                                         <Input
                                             type="text"
                                             className="form-control"
-                                            id="inputCellPhone4"
+                                            id="mobilePhone"
                                             placeholder="Cell Phone"
                                             onChange={this.onChange.bind(this, 'phone')} />
                                     </div>
@@ -126,7 +126,7 @@ class RegistrationPhaseOne extends Component {
                                     <Input
                                         type="email"
                                         className="form-control"
-                                        id="inputEmail4"
+                                        id="email"
                                         placeholder="Email"
                                         onChange={this.onChange.bind(this, 'email')} />
                                 </div>
