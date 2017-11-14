@@ -96,6 +96,14 @@ img.rounded.mx-auto.d-block {
     font-size: 13px;
 }
 
+.cuitSpinner {
+    background: rgba(255, 255, 255, 0.12)url(http://www.jettools.com/images/animated_spinner.gif);
+    background-repeat: no-repeat;
+    background-size: 12%;
+    background-position-x: right;
+    background-position-y: center;
+}
+
 
 
 button.btn-select.dropdown-toggle.btn.btn-secondary {
