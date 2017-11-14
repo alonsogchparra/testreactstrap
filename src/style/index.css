@@ -96,6 +96,14 @@ img.rounded.mx-auto.d-block {
     font-size: 13px;
 }
 
+.alert { 
+    border-radius: 0rem;
+}
+
+.alert-danger {
+    font-family: 'WorkSans';
+}
+
 .cuitSpinner {
     background: rgba(255, 255, 255, 0.12)url(http://www.jettools.com/images/animated_spinner.gif);
     background-repeat: no-repeat;
@@ -133,7 +141,7 @@ p.plan-subtitle {
 }
 
 
-.list-group-item-action:hover {
+.list-group-item-action:hover, .list-group-item-action:focus {
     color: #495057;
     text-decoration: none;
     background-color: #7a8796;
@@ -154,7 +162,7 @@ hr.hr-plan {
     width: 77%;
 }
 
-.list-group-item-action:hover hr {
+.list-group-item-action:hover hr, .list-group-item-action:focus hr {
     background-color: #c0d2df;
 }
 
