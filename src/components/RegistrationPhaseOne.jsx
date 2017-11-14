@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Alert, Button, Form, FormGroup, Input } from 'reactstrap';
 import axios from "axios";
+import _ from 'underscore';
 
 import PlanSelection from './PlanSelection'
 import LoanAssetCalculation from './LoanAssetCalculation'
@@ -14,15 +15,20 @@ class RegistrationPhaseOne extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
+            firstName: '',
             lastName: '',
             cuit: '',
             cuitIsValid: null,
-            phone: '',
-            email: ''
+            mobilePhone: '',
+            email: '',
+            loanValue: '',
+            AssetValue: '',
+            AssetAge: ''
+
         };
 
         this.onChange = this.onChange.bind(this);
+        this.onChangeInput = this.onChangeInput.bind(this);
     }
 
     onChange(field, e) {
@@ -33,6 +39,7 @@ class RegistrationPhaseOne extends Component {
                 // activa overlay
                 // utilizar debounce
                 // debounce hace que no hagan tantas peticiones por input
+
                 axios.post(CUIT_VALIDATOR_URL, {
                     cuit: e.target.value
                 }).then((response) => {
@@ -52,8 +59,16 @@ class RegistrationPhaseOne extends Component {
         this.setState(newState);
     }
 
+    onChangeInput(field, value, fn) {
+        
+        fn = fn ? fn : () => {};
+        this.setState({
+            [field]: value
+        }, fn);
+    }
+
     render() {
-        const { cuitIsValid } = this.state;
+        const { firstName, lastName, mobilePhone, email, cuit, cuitIsValid } = this.state;
 
         return (
             <div className="container mt-5 mb-5">
@@ -89,7 +104,8 @@ class RegistrationPhaseOne extends Component {
                                             className="form-control"
                                             id="firstName"
                                             placeholder="Individual Borrower Name"
-                                            onChange={this.onChange.bind(this, 'name')} />
+                                            onChange={e => this.onChangeInput('firstName', e.target.value)}
+                                            />
                                     </div>
                                     <div className="form-group col-md-6">
                                         <Input
@@ -97,28 +113,32 @@ class RegistrationPhaseOne extends Component {
                                             className="form-control"
                                             id="lastName"
                                             placeholder="Individual Borrower Last Name"
-                                            onChange={this.onChange.bind(this, 'lastName')} />
+                                            onChange={e => this.onChangeInput('lastName', e.target.value)}
+                                             />
                                     </div>
                                 </div>
                                 <div className="form-row">
                                     <div className="form-group col-md-6">
                                         <Input
                                             type="text"
-                                            className="form-control"
+                                            className={cuitIsValid ? 'form-control' : 'form-control cuitSpinner' }
                                             id="cuit"
                                             placeholder="CUIT"
-                                            onChange={this.onChange.bind(this, 'cuit')} />
+                                            onChange={this.onChange.bind(this, 'cuit')} 
+                                            // onChange={e => this.onChangeInput('cuit', e.target.value)}
+                                            />
                                         <div className="overlay">
                                             <i className="fa fa-spinner fa-spin"></i>
                                         </div>
                                     </div>                                    
                                     <div className="form-group col-md-6">
                                         <Input
-                                            type="text"
+                                            type="tel"
                                             className="form-control"
                                             id="mobilePhone"
                                             placeholder="Cell Phone"
-                                            onChange={this.onChange.bind(this, 'phone')} />
+                                            onChange={e => this.onChangeInput('mobilePhone', e.target.value)} 
+                                            />
                                     </div>
                                 </div>
 
@@ -128,14 +148,22 @@ class RegistrationPhaseOne extends Component {
                                         className="form-control"
                                         id="email"
                                         placeholder="Email"
-                                        onChange={this.onChange.bind(this, 'email')} />
+                                        onChange={e => this.onChangeInput('email', e.target.value)} 
+                                        />
                                 </div>
 
                                 <LoanAssetCalculation />
                                 <PlanSelection />
-
                                 <br />
-
+                                {firstName}
+                                <br/>
+                                {lastName}
+                                <br/>
+                                {cuit}
+                                <br/>
+                                {mobilePhone}
+                                <br/>
+                                {email}
                                 <Button type="submit" color="primary" disabled>APPLY</Button>
                             </FormGroup>
                         </Form>

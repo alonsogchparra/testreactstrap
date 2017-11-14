@@ -35,7 +35,8 @@ class LoanAssetCalculation extends Component {
                             type="text" 
                             className="form-control" 
                             id="assetValue"
-                               placeholder="Asset Value"/>
+                               placeholder="Asset Value"
+                               />
                     </div>
 
                     <div className="form-group col-md-3">
