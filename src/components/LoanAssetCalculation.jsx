@@ -8,7 +8,8 @@ class LoanAssetCalculation extends Component {
         super(props)
         this.toggle = this.toggle.bind(this);
         this.state = {
-          dropdownOpen: false
+          dropdownOpen: false,
+          assetAge: [0,1,2,3,4,5]
         };
     }
 
@@ -45,12 +46,12 @@ class LoanAssetCalculation extends Component {
                                 Car Age
                             </DropdownToggle>
                             <DropdownMenu>
-                                <DropdownItem>0</DropdownItem>
-                                <DropdownItem>1</DropdownItem>
-                                <DropdownItem>2</DropdownItem>
-                                <DropdownItem>3</DropdownItem>
-                                <DropdownItem>4</DropdownItem>
-                                <DropdownItem>5</DropdownItem>                                
+                                <DropdownItem>{this.state.assetAge[0]}</DropdownItem>
+                                <DropdownItem>{this.state.assetAge[1]}</DropdownItem>
+                                <DropdownItem>{this.state.assetAge[2]}</DropdownItem>
+                                <DropdownItem>{this.state.assetAge[3]}</DropdownItem>
+                                <DropdownItem>{this.state.assetAge[4]}</DropdownItem>
+                                <DropdownItem>{this.state.assetAge[5]}</DropdownItem>                                
                             </DropdownMenu>
                         </Dropdown>
                     </div>
