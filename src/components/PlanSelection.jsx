@@ -4,6 +4,11 @@ class PlanSelection extends Component {
 
     constructor(props) {
         super(props)
+        this.state = {
+            planTwentyFour: [10 ,20 ,30],
+            planThirtySix: [40,50,60],
+            planFortyEight: [70, 80, 90]
+        }
     }
 
     render() {
@@ -30,12 +35,12 @@ class PlanSelection extends Component {
                             <div className="grid-title">24 months</div>
                             <br/>
                             <div className="list-group border">
-                                <a href="#" className="list-group-item-action">
-                                    <p className="mt-3">8888UVAS</p>
+                                <a className="list-group-item-action">
+                                    <p className="mt-3">{this.state.planTwentyFour[0]} UVAS</p>
                                     <hr className="hr-plan" />
-                                    <p>$8888</p>
+                                    <p>${this.state.planTwentyFour[1]}</p>
                                     <hr className="hr-plan" />
-                                    <p>$8888</p>
+                                    <p>${this.state.planTwentyFour[2]}</p>
                                 </a>
                             </div>
                         </div>
@@ -44,24 +49,26 @@ class PlanSelection extends Component {
                             <br/>
                             <div className="list-group border">
                                 <a className="list-group-item-action">
-                                    <p className="mt-3">8888UVAS</p>
+                                    <p className="mt-3">{this.state.planThirtySix[0]}UVAS</p>
                                     <hr className="hr-plan"/>
-                                    <p>$8888</p>
+                                    <p>${this.state.planThirtySix[1]}</p>
                                     <hr className="hr-plan"/>
-                                    <p>$8888</p>
+                                    <p>${this.state.planThirtySix[2]}</p>
                                 </a>
                             </div>
                         </div>
                         <div className="col">
-                            <div className="grid-title">48 months</div>
+                            <div 
+                            className="grid-title"
+                            onClick={this.props.Testing}>48 months</div>
                             <br/>
                             <div className="list-group border">
                                 <a className="list-group-item-action">
-                                    <p className="mt-3">8888UVAS</p>
+                                    <p className="mt-3">{this.state.planFortyEight[0]}UVAS</p>
                                     <hr className="hr-plan" />
-                                    <p>$8888</p>
+                                    <p>${this.state.planFortyEight[1]}</p>
                                     <hr className="hr-plan" />
-                                    <p>$8888</p>
+                                    <p>${this.state.planFortyEight[2]}</p>
                                 </a>
                             </div>
 
