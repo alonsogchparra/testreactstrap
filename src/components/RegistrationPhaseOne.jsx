@@ -23,12 +23,14 @@ class RegistrationPhaseOne extends Component {
             email: '',
             loanValue: '',
             AssetValue: '',
-            AssetAge: ''
+            AssetAge: '',
+            turned: false
 
         };
 
         this.onChange = this.onChange.bind(this);
         this.onChangeInput = this.onChangeInput.bind(this);
+        this.Testing = this.Testing.bind(this);
     }
 
     onChange(field, e) {
@@ -65,6 +67,21 @@ class RegistrationPhaseOne extends Component {
         this.setState({
             [field]: value
         }, fn);
+    }
+
+
+    componentWillUpdate(nextProps, nextState) {
+        if(nextState.loanValue && nextState.assetValue) {
+            // la peticion que se desea realizar 
+        }
+    }
+
+    Testing () {
+        this.setState(() => {
+            return {
+                turned: !this.state.turned
+            }
+        });
     }
 
     render() {
@@ -154,17 +171,12 @@ class RegistrationPhaseOne extends Component {
 
                                 <LoanAssetCalculation />
                                 <PlanSelection />
-                                <br />
-                                {firstName}
-                                <br/>
-                                {lastName}
-                                <br/>
-                                {cuit}
-                                <br/>
-                                {mobilePhone}
-                                <br/>
-                                {email}
-                                <Button type="submit" color="primary" disabled>APPLY</Button>
+                                <Button 
+                                    type="submit"
+                                    color="primary" 
+                                    disabled
+                                    >
+                                    APPLY</Button>
                             </FormGroup>
                         </Form>
                     </div>
