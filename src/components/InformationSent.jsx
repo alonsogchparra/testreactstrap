@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Media } from 'reactstrap'
+import { Button } from 'reactstrap'
 
 import logo from '../images/LOGO_Aracar-01.svg'
 import checkmark from '../images/request sent_icon-01.svg'
